@@ -242,9 +242,9 @@ audio, canvas, progress, video {
 body {
   -moz-osx-font-smoothing: grayscale;
   -webkit-font-smoothing: antialiased;
-  background: white;
-  color: #000;
-  font-family: "Hannari", "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
+  background: black;
+  color: white;
+  font-family: "ヒラギノ明朝 ProN W6", "HiraMinProN-W6", "HG明朝E", "ＭＳ Ｐ明朝", "MS PMincho", "MS 明朝", serif;
   font-size: 1.6rem;
   font-style: italic;
   font-weight: 400;
@@ -255,6 +255,7 @@ body {
 }
 
 img {
+  max-width: 100%;
   vertical-align: middle
 }
 
@@ -301,511 +302,201 @@ em {
  * style
  */
 .wrap{
+  width: 100vw;
+  height: 100vh;
+  overflow: hidden;
   position: relative;
-  padding-top: 64px;
 }
-.wrap.top{
-  background: url(../images/bg_main.png) no-repeat center;
-  background-attachment: fixed;
+.bg_blue,
+.bg_red{
+  width: 100%;
+  height: 100%;
+  background: url(../images/bg_blue.jpg) center;
   background-size: cover;
-}
-.sp{
-  display: none;
-}
-
-.arrows__header{
-  text-align: center;
-  position: fixed;
-  width: 100%;
-  z-index: 5;
-}
-.arrows__header .header__logo{
   position: absolute;
-  top: -48px;
-  left: 50%;
-  transform: translate(-50%,0);
-  font-size: 48px;
-}
-.arrows__header .header__img{
-  width: 240px;
-}
-.mainVisual{
-  max-width: 1080px;
-  margin: 0 auto 80px;
-  position: relative;
-}
-.top .mainVisual::after{
-  content: "";
-  display: block;
-  width: 1px;
-  height: 120px;
-  background: #fff;
-  position: absolute;
-  bottom: -70px;
-  left: 50%;
-}
-.mainVisual .mainVisual__img{
-  width: 100%;
-}
-.mainVisual .mainVisual__txtWrap{
-  text-align: center;
-  color: #fff;
-  width: 880px;
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-.arrows__footer{
-  height: 95vh;
-  background: url(../images/bg_footer.png) no-repeat;
-  background-attachment: fixed;
-  background-size: cover;
-  color: #fff;
-  text-align: center;
-  position: relative;
-}
-.contact{
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  transform: translate(-50%,-50%);
-}
-.contact .heading{
-  margin-bottom: 40px;
-}
-.contact__trigger{
-  color: #fff;
-  letter-spacing: .1em;
-  white-space: nowrap;
-}
-.footer__copyright{
-  position: absolute;
-  bottom: 40px;
-  left: 50%;
-  transform: translate(-50%,0);
-  font-size: 1.4rem;
-}
-.arrows__content{
-  margin: 0 auto;
-}
-.heading{
-  text-align: center;
-  margin-bottom: 64px;
-}
-.heading__img{
-  height: 60px;
-}
-.subHeading{
-  text-align: center;
-  margin: -40px 0 64px;
-}
-.section{
-  padding: 80px 0;
-}
-
-/* top */
-.about{
-  text-align: center;
-}
-.about__ttl{
-  font-size: 2rem;
-}
-.about__img{
-  width: 640px;
-}
-.about__txt{
-  margin-top: 24px;
-}
-.about__txt .emphasis{
-  font-weight: bold;
-}
-.about__copy{
-  font-size: 2.4rem;
-  line-height: 1.8em;
-  margin-top: 40px;
-}
-.works__inr{
-  max-width: 1440;
-  padding: 0 80px;
-  margin: 0 auto;
-}
-.works__list{
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-wrap: wrap;
-}
-.works__item{
-  width: 31%;
-  margin: 0 3.5% 3.5% 0;
-  line-height: 1.8em;
-}
-.works__img{
-  width: 100%;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all  0.3s ease;
-}
-a .works__img:hover{
-  opacity: .7;
-}
-.works__tag,
-.works__date{
-  font-size: 1.4rem;
-  color: #666;
-}
-.works__tag{
-  margin: 8px 0;
-}
-.works__txt{
-  font-size: 1.4rem;
-  line-height: 1.5em;
-  margin: 8px 0;
-}
-.insta{
-  padding-bottom: 160px;
-}
-.insta .heading__img{
-  height: 80px;
-}
-.insta__trigger{
-  display: block;
-  margin: -24px auto 0;
-  text-align: center;
-  letter-spacing: .1em;
-  cursor: pointer;
-}
-.insta__profile{
-  display: block;
-  width: 160px;
-  margin: 0 auto 8px;
-  border-radius: 50%;
-}
-.insta__list{
-  max-width: 14400px;
-  margin: 64px auto 0;
-  padding: 0 80px;
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-wrap: wrap;
-}
-.insta__item{
-  width: 24%;
-  margin: 0 1% 1% 0;
-}
-.insta__img{
-  width: 100%;
-}
-.member__list{
-  max-width: 960px;
-  margin: 0 auto;
-}
-.member__list::after{
-  content: "";
-  display: block;
-  clear: both;
-}
-.member__item{
-  float: left;
-  width: 45%;
-}
-.member__item:nth-child(2n){
-  float: right;
-}
-.member__img{
-  width: 100%;
-}
-.member__name{
-  text-align: center;
-  font-size: 2rem;
-  margin: 32px 0 0;
-}
-.member__trigger{
-  text-align: center;
-  margin-bottom: 24px;
-  font-size: 1.4rem;
-}
-.member__trigger::before{
-  content: "";
-  display: inline-block;
-  width: 16px;
-  height: 16px;
-  background: url(../images/ico_instagram.svg);
-  background-size: 100%;
-  vertical-align: middle;
-}
-.member__txt{
-  font-size: 1.4rem;
-  line-height: 1.8em;
-}
-.member__txt + .member__txt{
-  margin-top: 16px;
-}
-
-
-/* detail */
-.detail{
-  max-width: 1080px;
-  margin: 0 auto 64px;
-}
-.detail img{
-  width: 100%;
-}
-.mainVisual__ttl{
-  font-size: 6.4rem;
-}
-.mainVisual__role{
-  font-size: 4rem;
-  margin-top: 40px;
-}
-.mainVisual__txt{
-  font-size: 2rem;
-  margin-top: 40px;
-}
-.detail__wrap::after{
-  content: "";
-  display: block;
-  clear: both;
-}
-.detail__main{
-  width: 70%;
-  float: left;
-}
-.detail__txtWrap{
-  margin-bottom: 64px;
-}
-.detail__ttl{
-  font-size: 2rem;
-  font-weight: normal;
-  color: #0d47a1;
-}
-.detail__ttl::before{
-  content: "";
-  display: inline-block;
-  width: 40px;
-  height: 1px;
-  background: #0d47a1;
-  vertical-align: middle;
-  margin-right: 16px;
-}
-.detail__txt{
-  font-family: "游ゴシック体", YuGothic, "游ゴシック Medium", "Yu Gothic Medium", "游ゴシック", "Yu Gothic", "メイリオ", sans-serif;
-  font-size: 1.4rem;
-  font-style: normal;
-  color: #333;
-  margin-top: 24px;
-}
-.detail__imgWrap{
-  margin-bottom: 40px;  
-}
-.detail__imgList{
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-wrap: wrap;
-}
-.detail__imgItem{
-  width: 48%;
-  margin-bottom: 24px;
-}
-.detail__imgTxt{
-  font-size: 1.4rem;
-  margin-top: 8px;  
-}
-.detail__author{
-  text-align: right;
-}
-.detail__info{
-  width: 25%;
-  float: right;
-  font-size: 1.4rem;
-}
-.detail__date,
-.detail__role{
-  display: table;
-  table-layout: fixed;
-}
-.detail__term,
-.detail__desc{
-  display: table-cell;
-}
-.detail__term{
-  width: 72px;
-}
-.detail__desc{
-  padding-left: 8px;
-  position: relative;
-}
-.detail__desc::before{
-  content: ":";
-  display: inline-block;
-  position: absolute;
+  top: 0;
   left: 0;
 }
-.photo__list{
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-wrap: wrap;
-  margin-bottom: 64px;
+@keyframes fade {
+  0%   { opacity:0; }
+  50%  { opacity:1; }
+  100% { opacity:0; }
 }
-.photo__item{
-  width: 50%;
-  box-sizing: border-box;
-  margin-bottom: 8px;
+.bg_red{
+  background: url(../images/bg_red.jpg) center;
+  background-size: cover;
+  animation: fade 20s infinite;
+  z-index: 2;
 }
-.gallery__list{
-  display: -webkit-flex;
-  display: -moz-flex;
-  display: -ms-flex;
-  display: -o-flex;
-  display: flex;
-  flex-wrap: wrap;
-  margin: 0 -0.5%;
+.content{
+  width: 100vw;
+  height: 100vh;
+  position: relative;
+  z-index: 10;
 }
-.gallery__item{
-  width: 33.33%;
-  box-sizing: border-box;
-  padding: 0 0.5%;
-  margin-bottom: 1%;
+.ptn_1,
+.ptn_2{
+  width: 100%;
+  height: 100%;
+  position: absolute;
 }
-
-@media screen and (min-width:768px){
-  .works__item:nth-child(3n){
-    margin-right: 0;
-  }
-  .insta__item:nth-child(4n){
-    margin-right: 0;
-  }
-  .detail__imgItem:nth-child(2n){
-    margin-left: 4%;
-  }
-  .photo__item:nth-child(2n-1){
-    padding-right: 4px;
-  }
-  .photo__item:nth-child(2n){
-    padding-left: 4px;
-  }
+.ptn_1::before,
+.ptn_1::after,
+.ptn_2::before,
+.ptn_2::after{
+  content: "";
+  display: block;
+  position: absolute;
+}
+.ptn_1::before,
+.ptn_1::after{
+  width: 100%;
+  height: 56px;
+}
+.ptn_2::before,
+.ptn_2::after{
+  width: 50px;
+  height: calc(100% - 112px);
+}
+.ptn_1::before{
+  background: url(../images/ptn_top.png) no-repeat;
+  background-size: 100%;
+}
+.ptn_1::after{
+  background: url(../images/ptn_bottom.png) no-repeat;
+  background-size: 100%;
+  bottom: -10px;
+}
+.ptn_2::before{
+  background: url(../images/ptn_left.png) no-repeat;
+  background-size: cover;
+  top: 56px;
+  left: 0;
+}
+.ptn_2::after{
+  background: url(../images/ptn_right.png) no-repeat;
+  background-size: cover;
+  top: 56px;
+  right: 0;
+}
+@keyframes fade-logo {
+  0%   { opacity:0; }
+  100%  { opacity:1; }
+}
+.logo{
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+  width: 30%;
+  animation: fade-logo 8s;
+}
+main{
+  width: 100%;
+  height: 100%;
+}
+.drawing{
+  width: 100%;
+  height: 100%;
+  background: url(../images/drawing.png) no-repeat;
+  background-size: cover;
+  opacity: .9;
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+.link_shun,
+.link_ysm{
+  position: absolute;
+  top: 0;
+  width: 130px;
+  height: 100%;
+}
+.link_shun{
+  left: 0;
+  background: url(../images/ttl_art.png) no-repeat center center;
+  background-size: 130px;
+}
+.link_ysm{
+  right: 0;
+  background: url(../images/ttl_design.png) no-repeat center center;
+  background-size: 130px;
+}
+.link_imgWrap{
+  width: 30px;
+  position: absolute;
+  top: 50%;
+  transform: translate(0,-50%);
+}
+.link_shun .link_imgWrap{
+  left: 50px;
+}
+.link_ysm .link_imgWrap{
+  right: 50px;
+}
+footer{
+  font-size: 1.2rem;
+  position: absolute;
+  bottom: 40px;
+  right: 60px;
 }
 
 @media screen and (max-width:768px){
-  .pc{
-    display: none;
+  .ptn_1::before,
+  .ptn_1::after{
+    height: 20px;
   }
-  .sp{
-    display: block;
+  .ptn_2::before,
+  .ptn_2::after{
+    width: 20px;
+    height: calc(100% - 40px);
+    top: 20px;
   }
-  *{
-    max-width: 100%;
+  .ptn_1::before{
+    background-size: cover;
   }
-  .mainVisual .mainVisual__img{
-    width: 90%;
-    margin: 0 auto;
+  .ptn_1::after{
+    background-size: cover;
+    bottom: 0;
   }
-  .section{
-    padding: 80px 16px;
+  .ptn_2::before{
+    background: url(../images/ptn_left.png) repeat-y;
+    background-size: 100%;
+    left: 0;
   }
-  .about__ttl{
-    font-size: 1.8rem;
+  .ptn_2::after{
+    background: url(../images/ptn_right.png) repeat-y;
+    background-size: 100%;
+    right: 0;
   }
-  .about__txt{
-    text-align: left;
-    font-size: 1.4rem;
-    line-height: 1.8em;
+  .logo{
+    width: 50%;
   }
-  .about__copy{
-    font-size: 2rem;
+  .link_shun,
+  .link_ysm{
+    width: 60px;
   }
-  .works__inr{
-    margin: 0;
-    padding: 0;
+  .link_shun{
+    background-size: 60px;
   }
-  .works__item{
-    width: 100%;
-    margin: 0 0 32px;
+  .link_ysm{
+    background-size: 60px;
   }
-  .works__tag, .works__date{
-    font-size: 1.2rem;
+  .link_imgWrap{
+    width: 16px;
   }
-  .works__tag{
-    margin: 8px 0;
+  .link_shun .link_imgWrap{
+    left: 20px;
   }
-  .works__ttl{
-    line-height: 1.6em;
+  .link_ysm .link_imgWrap{
+    right: 20px;
   }
-  .insta__profile{
-    width: 120px;
-  }
-  .insta__list{
-    margin: 64px 0 0;
-    padding: 0;
-  }
-  .insta__item{
-    width: 49%;
-    margin: 0 1% 2% 0;
-  }
-  .insta__item:nth-child(2n){
-    margin: 0 0 2% 1%;
-  }
-  .member__item{
-    float: none;
-    width: 100%;
-  }
-  .member__item:nth-child(2n){
-    float: none;
-    margin-top: 64px;
-  }
-  .contact .heading{
-    margin-bottom: 16px;
-  }
-  .footer__copyright{
-    bottom: 16px;
-  }
-
-  .detail .mainVisual{
-    margin-bottom: 16px;
-  }
-  .mainVisual__ttl{
-    font-size: 3rem;
-  }
-  .mainVisual__role{
-    font-size: 2.2rem;
-    margin-top: 16px;
-  }
-  .mainVisual__txt{
-    font-size: 1.6rem;
-    width: 80%;
-    margin: 24px auto 0;
-  }
-  .detail__wrap{
-    margin: 0 16px;
-    width: auto;
-  }
-  .detail__main,
-  .detail__info{
-    float: none;
-  }
-  .detail__info{
-    margin-bottom: 64px;
-  }
-  .detail__ttl{
-    line-height: 2em;
-  }
-  .detail__imgList{
-    margin: 0 24px;
-  }
-  .detail__imgItem{
-    width: 100%;
+  footer{
+    font-size: 1rem;
+    bottom: 20px;
+    left: 50%;
+    right: inherit;
+    transform: translate(-50%,0);
   }
 }
